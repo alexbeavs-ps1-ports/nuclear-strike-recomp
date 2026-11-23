@@ -1,0 +1,46 @@
+{
+  "format_version": 1,
+  "game": {
+    "name": "Nuclear Strike",
+    "id": "SLUS-00518",
+    "boot_exe": "SLUS_005.18"
+  },
+  "marketing": {
+    "description": "",
+    "publisher": "",
+    "year": "",
+    "region": "USA",
+    "players": 1
+  },
+  "rom_identity": {
+    "cue_name": "Nuclear Strike (USA).cue",
+    "bin_name": "Nuclear Strike (USA) (Track 1).bin",
+    "track_counts": [
+      2
+    ],
+    "require_cue": true,
+    "data_track": {
+      "size": 603168048,
+      "md5": "e8191f9fea53c04056f31404bbf6c98a",
+      "sha1": "b0a461058a16ee1fd31bf355621fe6ceb7d59ff9",
+      "crc32": "36086c79"
+    },
+    "disc_fp": "02d7e1be66bcaeaac1c22f173a9c53393cce117c30c7d8aafd69c4e0266e2bc8"
+  },
+  "exe": {
+    "load_address": "0x80010000",
+    "entry_pc": "0x80070820",
+    "text_size": "0x00077000",
+    "stack_base": "0x801FFFF0"
+  },
+  "seeds": {
+    "count": 1416,
+    "source": "boot_exe_jal"
+  },
+  "warnings": [],
+  "notes": [
+    "entry_pc/load_address/text_size/stack_base taken from PS-X EXE header.",
+    "seeds are first-pass boot-EXE JAL targets (+ entry); expect to grow as overlays / runtime paths are discovered.",
+    "required_disc_fp is psxrecomp-toc-v1 (matches runtime DiscIdentity)."
+  ]
+}

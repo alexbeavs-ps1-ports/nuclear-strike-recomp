@@ -1,0 +1,59 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "Nuclear Strike"
+id = "SLUS-00518"
+players = 1
+exe = "disc/SLUS_005.18"
+disc = "disc/Nuclear Strike (USA).cue"
+discs = ["disc/Nuclear Strike (USA).cue"]
+disc_serials = ["SLUS-00518"]
+load_address = "0x80010000"
+entry_pc = "0x80070820"
+text_size = "0x00077000"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Nuclear Strike (USA) (Track 1).bin"
+cue_name = "Nuclear Strike (USA).cue"
+boot_exe = "SLUS_005.18"
+known_sizes = [603168048]
+known_md5 = [
+  "e8191f9fea53c04056f31404bbf6c98a",
+]
+known_sha1 = [
+  "b0a461058a16ee1fd31bf355621fe6ceb7d59ff9",
+]
+known_crc32 = [
+  "36086c79",
+]
+
+[recompiler]
+bios_config = "psxrecomp/bios/SCPH1001.toml"
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+openbios = false
+bios_hle = false
+window_title = "Nuclear Strike Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 2
+required_disc_fp = "02d7e1be66bcaeaac1c22f173a9c53393cce117c30c7d8aafd69c4e0266e2bc8"
